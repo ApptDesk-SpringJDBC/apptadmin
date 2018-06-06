@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- Definition Section Starts Here -->
+
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/menu/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu/menu.jsp" />
+		<put-attribute name="iconbar" value="/WEB-INF/jsp/menu/iconbar.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="logIn.definition" template="/WEB-INF/jsp/login/loginLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/login/log-in-header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login/login.jsp" />
+	</definition>
+
+	<definition name="error.definition" template="/WEB-INF/jsp/error/errorLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="/WEB-INF/jsp/error/error.jsp" />
+	</definition>
+
+	<definition name="base.popup.definition" template="/WEB-INF/jsp/popUpLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<!-- Definition Section Ends Here -->
+
+	<definition name="error" extends="error.definition">
+		<put-attribute name="title" value="Error" />
+	</definition>
+
+	<!-- Login Section -->
+	<definition name="login" extends="logIn.definition">
+		<put-attribute name="title" value="Login" />
+	</definition>
+
+	<definition name="log-out" extends="logIn.definition">
+		<put-attribute name="title" value="Login" />
+	</definition>
+
+	<definition name="session-expired"  template="/WEB-INF/jsp/login/session-expired.jsp">
+	</definition>
+
+	<!-- Home Page Section -->
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/WEB-INF/jsp/home/home.jsp" />
+	</definition>
+
+	<definition name="restrict_loc_ser_appt_window" template="/WEB-INF/jsp/home/restrict_loc_ser_appt_window.jsp">
+	</definition>
+
+	<!-- Drop Downs Section -->
+	<definition name="populate-resource" template="/WEB-INF/jsp/dropdowns/populate-resource.jsp">
+	</definition>
+	<definition name="populate-services" template="/WEB-INF/jsp/dropdowns/populate-services.jsp">
+	</definition>
+
+	<!-- Locations Section -->
+	<definition name="locations" extends="base.definition">
+		<put-attribute name="title" value="Locations" />
+		<put-attribute name="body" value="/WEB-INF/jsp/location/locations.jsp" />
+	</definition>
+
+	<definition name="locations-add" extends="base.popup.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/location/locations-add.jsp" />
+	</definition>
+
+	<definition name="locations-edit" extends="base.popup.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/location/locations-edit.jsp" />
+	</definition>
+
+	<definition name="locations-close" extends="base.popup.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/location/locations-close.jsp" />
+	</definition>
+
+	<definition name="locations-undelete" extends="base.popup.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/location/locations-undelete.jsp" />
+	</definition>
+
+	<definition name="locations-change-order" extends="base.popup.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/location/locations-change-order.jsp" />
+	</definition>
+
+</tiles-definitions>
